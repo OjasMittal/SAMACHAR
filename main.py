@@ -4,19 +4,17 @@ import sms
 import emaill
 import authorization
 from PIL import Image
-from annotated_text import annotated_text
 from streamlit_lottie import st_lottie
 import requests
 import os
+import base64
 from dotenv import load_dotenv
 load_dotenv()
 
 # Work to do:
-# 1.Add background image
-# 2.encrypt secrets
-# 3.Understand session state and authorisation
-# 4.Try stopping rerunning of code
-# 5.Create proper requirements.txt and Host on server
+# Understand session state and authorisation
+
+
 
 firebaseConfig = {
     'apiKey': os.getenv("API"),
@@ -37,35 +35,76 @@ storage = firebase.storage()
 img = Image.open('icon.jpeg')
 st.set_page_config(page_title="SAMACHAR", page_icon=img)
 
+# @st.experimental_memo
+# def get_img_as_base64(file):
+#     with open(file, "rb") as f:
+#         data = f.read()
+#     return base64.b64encode(data).decode()
+#
+#
+# img = get_img_as_base64("image.jpg")
 
-# Animation
+page_bg_img=f"""
+<style>
+[data-testid="stReportViewContainer"] > .main{{
+background-image: url("https://img.freepik.com/free-vector/vector-modern-abstract-geometric-background_260559-237.jpg?size=626&ext=jpg&ga=GA1.2.1693190306.1663954344");
+background-size: 110%;
+background-position: top left;
+background-repeat: no-repeat;
+opacity: 0.1
+
+
+#background-attachment: local;}}
+[data-testid="stHeader"]{{
+background-color: rgba(0,0,0,0);
+}}
+
+# [data-testid="stSidebar"]> div:first-child{{
+# background-image: url("data:image/jpeg;base64,{img}");
+# background-position: center;
+# }}
+</style>
+ """
+hide_menu_style="""
+<style>
+#MainMenu{visibility:hidden;}
+footer{visibility:hidden;}
+</style>
+"""
+st.markdown(hide_menu_style,unsafe_allow_html=True)
+st.markdown(page_bg_img,unsafe_allow_html=True)
+
+#Animation
 def load_lottie_url(url: str):
     r = requests.get(url)
     if r.status_code != 200:
         return None
     return r.json()
 
-
-st.title("SAMACHAR")
+st.markdown("<h1 style='text-align: center; color: #F55F0E;'>SAMACHAR</h1>", unsafe_allow_html=True)
 st.subheader('Get your personalised Newspaper mailed to you')
 st.write(" ")
 flag = 1
 if flag == 1:
-    st.info("Login through login option in the left drop down menu to use this services")
+    st.info("Login through login option in the left drop down menu to use this service")
     st.write(" ")
-col1, col2 = st.columns([3, 2])
+col1, col2 = st.columns([5, 2])
 with col1:
     st.write(" ")
-    st.write(
-        f"\n**SAMACHAR helps you to get a personalised newspaper\N{newspaper} emailed  to you with links of the topic which interest you.**")
+    st.markdown(
+        "<h3 style='text-align: center; color: #00FFFFFF;'>SAMACHAR helps you to get a personalised newspaper \N{newspaper} emailed  to you instantly with links of the topic which interests you!</h3>",
+        unsafe_allow_html=True)
+
     st.write(" ")
     st.write(" ")
-    annotated_text(("Get notified by sms","","#8ef"),("as soon as your newspaper gets mailed to you.","","#faa"))
+
 with col2:
-    lottie_animation_1 = "https://assets10.lottiefiles.com/datafiles/98a3d0add75fc3c86f6d6f9b148c111e/Newspaper animation.json"
+    lottie_animation_1 = "https://assets5.lottiefiles.com/datafiles/98a3d0add75fc3c86f6d6f9b148c111e/Newspaper animation.json"
     lottie_anime_json = load_lottie_url(lottie_animation_1)
     st_lottie(lottie_anime_json, key="news")
-
+st.subheader("**Save time in todays fast running world by getting news of your interest without hogging through various webpages!**")
+st.markdown("<h3 style='text-align: center; color: #00FFFFFF;'>Get notified by SMS as soon as your newspaper gets mailed to you.</h3>", unsafe_allow_html=True)
+st.write("")
 st.sidebar.title("WELCOME!")
 gauth = authorization.authorize()
 if gauth != 2:
@@ -76,6 +115,21 @@ if gauth != 2:
 
 
 if gauth == 2:
+    flag = 0
+    st.sidebar.write("")
+    st.sidebar.write("")
+    st.sidebar.write("")
+    st.sidebar.write("")
+    st.sidebar.write("")
+    st.sidebar.write("")
+    st.sidebar.write("")
+
+    with st.sidebar:
+        c1, c2, c3 = st.columns([1, 4, 1])
+        with c2:
+            lottie_animation_2 = "https://assets1.lottiefiles.com/packages/lf20_enlitdkl.json"
+            lottie_anime_json = load_lottie_url(lottie_animation_2)
+            st_lottie(lottie_anime_json, key="hello")
     name = st.text_input("Enter your name")
     phone = st.text_input("Enter your contact number")
     email = st.text_input("Enter your email")
