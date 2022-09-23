@@ -1,7 +1,10 @@
 from trycourier import Courier
 import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-client = Courier(auth_token="pk_prod_Y1AEKZC6XV4RS0J6VJW3EC3PTT8M")
+client = Courier(auth_token=os.getenv("AUTH_TOKEN"))
 from news import Newsfeed
 def send_email(name,email,interestt):
                 news_feed=Newsfeed(interest=interestt,

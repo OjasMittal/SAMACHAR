@@ -7,7 +7,9 @@ from PIL import Image
 from annotated_text import annotated_text
 from streamlit_lottie import st_lottie
 import requests
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Work to do:
 # 1.Add background image
@@ -16,9 +18,8 @@ import requests
 # 4.Try stopping rerunning of code
 # 5.Create proper requirements.txt and Host on server
 
-
 firebaseConfig = {
-    'apiKey': "AIzaSyDm6rtM6RmacepAbB9OeJnNy2ZxIT4b8ZA",
+    'apiKey': os.getenv("API"),
     'authDomain': "samachar-e33a2.firebaseapp.com",
     'projectId': "samachar-e33a2",
     'databaseURL': "https://samachar-e33a2-default-rtdb.asia-southeast1.firebasedatabase.app",

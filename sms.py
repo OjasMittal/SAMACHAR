@@ -1,6 +1,10 @@
 from trycourier import Courier
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 def send_sms(number):
-    client = Courier(auth_token="pk_prod_Y1AEKZC6XV4RS0J6VJW3EC3PTT8M")
+    client = Courier(auth_token=os.getenv("AUTH_TOKEN"))
     client.send_message(
             message={
                 "to": {

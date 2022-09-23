@@ -2,7 +2,12 @@ import streamlit as st
 import asyncio
 from SessionState import get
 from httpx_oauth.clients.google import GoogleOAuth2
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
+CLIENT_ID=os.getenv("CLIENT_ID")
+CLIENT_SECRET=os.getenv("CLIENT_SECRET")
 
 async def write_authorization_url(client,
                                   redirect_uri):
@@ -34,8 +39,8 @@ def main(user_id, user_email):
 
 # if __name__ == '__main__':
 def authorize():
-    client_id = '905842737938-jq77fc2t3b4c5c25nfbcobuh3ponaap5.apps.googleusercontent.com'
-    client_secret = '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'
+    client_id = CLIENT_ID
+    client_secret = CLIENT_SECRET
     redirect_uri = 'http://localhost:8501/'
 
     client = GoogleOAuth2(client_id, client_secret)
