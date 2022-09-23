@@ -41,7 +41,7 @@ def main(user_id, user_email):
 def authorize():
     client_id = CLIENT_ID
     client_secret = CLIENT_SECRET
-    redirect_uri = 'http://localhost:8501/'
+    redirect_uri = os.getenv("REDIRECT")
 
     client = GoogleOAuth2(client_id, client_secret)
     authorization_url = asyncio.run(
