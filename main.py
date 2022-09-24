@@ -7,14 +7,8 @@ from PIL import Image
 from streamlit_lottie import st_lottie
 import requests
 import os
-import base64
 from dotenv import load_dotenv
 load_dotenv()
-
-# Work to do:
-# Understand session state and authorisation
-
-
 
 firebaseConfig = {
     'apiKey': os.getenv("API"),
@@ -35,15 +29,6 @@ storage = firebase.storage()
 img = Image.open('icon.jpeg')
 st.set_page_config(page_title="SAMACHAR", page_icon=img)
 
-# @st.experimental_memo
-# def get_img_as_base64(file):
-#     with open(file, "rb") as f:
-#         data = f.read()
-#     return base64.b64encode(data).decode()
-#
-#
-# img = get_img_as_base64("image.jpg")
-
 page_bg_img=f"""
 <style>
 [data-testid="stReportViewContainer"] > .main{{
@@ -51,8 +36,7 @@ background-image: url("https://img.freepik.com/free-vector/vector-modern-abstrac
 background-size: 110%;
 background-position: top left;
 background-repeat: no-repeat;
-opacity: 0.1
-#background-attachment: local;}}
+}}
 [data-testid="stHeader"]{{
 background-color: rgba(0,0,0,0);
 }}
