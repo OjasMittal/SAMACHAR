@@ -92,7 +92,7 @@ col1, col2 = st.columns([5, 2])
 with col1:
     st.write(" ")
     st.markdown(
-        "<h3 style='text-align: center; color: #00FFFFFF;'>SAMACHAR helps you to get a personalised newspaper \N{newspaper} emailed  to you instantly with links of the topic which interests you!</h3>",
+        "<h3 style='text-align: center; color: #FFFFFF;'>SAMACHAR helps you to get a personalised newspaper \N{newspaper} emailed  to you instantly with links of the topic which interests you!</h3>",
         unsafe_allow_html=True)
 
     st.write(" ")
@@ -103,7 +103,7 @@ with col2:
     lottie_anime_json = load_lottie_url(lottie_animation_1)
     st_lottie(lottie_anime_json, key="news")
 st.subheader("**Save time in todays fast running world by getting news of your interest without hogging through various webpages!**")
-st.markdown("<h3 style='text-align: center; color: #00FFFFFF;'>Get notified by SMS as soon as your newspaper gets mailed to you.</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: #FFFFFF;'>Get notified by SMS as soon as your newspaper gets mailed to you.</h3>", unsafe_allow_html=True)
 st.write("")
 st.sidebar.title("WELCOME!")
 gauth = authorization.authorize()
