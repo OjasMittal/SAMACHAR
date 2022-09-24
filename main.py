@@ -105,11 +105,14 @@ with col2:
 st.subheader("**Save time in todays fast running world by getting news of your interest without hogging through various webpages!**")
 st.markdown("<h3 style='text-align: center; color: #FFFFFF;'>Get notified by SMS as soon as your newspaper gets mailed to you.</h3>", unsafe_allow_html=True)
 st.write("")
-st.sidebar.title("WELCOME!")
+st.sidebar.markdown(
+        "<h1 style='text-align: center; color: #FFFFFF;'>WELCOME !</h1>",
+        unsafe_allow_html=True)
 gauth = authorization.authorize()
 if gauth != 2:
     st.sidebar.write("OR")
-    choice = st.sidebar.selectbox('Login / SignUp to SAMACHAR', ['Login', 'Sign up'])
+    choice = st.sidebar.radio('Login / SignUp to SAMACHAR', ['Login', 'SignUp'])
+    st.write('<style>div.row-widget.stRadio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
     email = st.sidebar.text_input("Enter your email address")
     password = st.sidebar.text_input("Enter your password", type="password")
 
@@ -141,7 +144,7 @@ if gauth == 2:
         if success:
             st.write("E-Newspaper Mailed Successfully!")
 else:
-    if choice == "Sign up":
+    if choice == "SignUp":
         handle = st.sidebar.text_input("Please enter your nickname", value="CoolPanda")
         submit = st.sidebar.button('Create my Account')
         if submit:
