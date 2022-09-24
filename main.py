@@ -52,8 +52,6 @@ background-size: 110%;
 background-position: top left;
 background-repeat: no-repeat;
 opacity: 0.1
-
-
 #background-attachment: local;}}
 [data-testid="stHeader"]{{
 background-color: rgba(0,0,0,0);
