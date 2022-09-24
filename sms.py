@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 load_dotenv()
 client = Courier(auth_token=os.getenv("AUTH_TOKEN"))
 def send_sms(number):
-
     client.send_message(
             message={
                 "to": {
