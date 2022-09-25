@@ -155,7 +155,7 @@ else:
                 interest = st.text_input("Enter your topic of interest")
                 result = st.button("Get SAMACHAR")
                 if result:
-                    success = emaill.send_email(name, email, interest)
+                    success = emaill.send_email(name,email,interest)
                     sms.send_sms(phone)
                     if success:
                         st.write("E-Newspaper Mailed Successfully!")

@@ -19,7 +19,7 @@ def send_email(name,email,interestt):
                             "title": f"Your {interestt} Samachar for today",
                             "body": f"Hi {name}! \n Check out todays Samachar on {interestt} \nDo not reply back to this email \n\n {news_feed.get()}\nSamachar",
                           },
-                          "data": {"note" : f"\nDo not reply back to this email \n\n {news_feed.get()}\nSamachar",
+                          "data": {"note": f"\nDo not reply back to this email \n\n {news_feed.get()}\nSamachar",
                           },
                           "routing": {
                                 "method": "single",
