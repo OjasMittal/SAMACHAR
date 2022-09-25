@@ -8,13 +8,14 @@ load_dotenv()
 
 CLIENT_ID=os.getenv("CLIENT_ID")
 CLIENT_SECRET=os.getenv("CLIENT_SECRET")
+redirect_uri = os.getenv("REDIRECT")
 
 async def write_authorization_url(client,
                                   redirect_uri):
     authorization_url = await client.get_authorization_url(
         redirect_uri,
         scope=["profile", "email"],
-        #extras_params={"access_type": "offline"},
+        extras_params={"access_type": "offline"},
     )
     return authorization_url
 
@@ -36,12 +37,10 @@ def main(user_id, user_email):
     st.sidebar.write(f"You're logged in as {user_email}")
 
 
-
-# if __name__ == '__main__':
 def authorize():
     client_id = CLIENT_ID
     client_secret = CLIENT_SECRET
-    redirect_uri = os.getenv("REDIRECT")
+
 
     client = GoogleOAuth2(client_id, client_secret)
     authorization_url = asyncio.run(
