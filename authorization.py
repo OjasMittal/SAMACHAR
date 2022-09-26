@@ -8,8 +8,7 @@ load_dotenv()
 
 CLIENT_ID=os.getenv("CLIENT_ID")
 CLIENT_SECRET=os.getenv("CLIENT_SECRET")
-redirect_uri = "http://localhost:8501/"
-#os.getenv("REDIRECT")
+redirect_uri = os.getenv("REDIRECT")
 client_id = CLIENT_ID
 client_secret = CLIENT_SECRET
 
