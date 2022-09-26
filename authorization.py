@@ -8,7 +8,8 @@ load_dotenv()
 
 CLIENT_ID=os.getenv("CLIENT_ID")
 CLIENT_SECRET=os.getenv("CLIENT_SECRET")
-redirect_uri = os.getenv("REDIRECT")
+redirect_uri = "http://localhost:8501/"
+#os.getenv("REDIRECT")
 client_id = CLIENT_ID
 client_secret = CLIENT_SECRET
 
@@ -18,7 +19,7 @@ async def write_authorization_url(client,
     authorization_url = await client.get_authorization_url(
         redirect_uri,
         scope=["profile","email"],
-        extras_params={"access_type": "offline"},
+       # extras_params={"access_type": "offline"},
     )
     return authorization_url
 

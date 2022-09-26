@@ -10,6 +10,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+
 firebaseConfig = {
     'apiKey': os.getenv("API"),
     'authDomain': "samachar-e33a2.firebaseapp.com",
