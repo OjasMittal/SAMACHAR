@@ -70,6 +70,7 @@ st.write(" ")
 flag = 1
 if flag == 1:
     st.info("Login through login option in the left drop down menu to use this service")
+    st.warning('Make sure you are not logged in with multiple gmail accounts to use google authentication')
     st.write(" ")
 col1, col2 = st.columns([5, 2])
 with col1:

@@ -17,9 +17,9 @@ def send_email(name,email,interestt):
                           },
                           "content": {
                             "title": f"Your {interestt} Samachar for today",
-                            "body": f"Hi {name}! \n Check out todays Samachar on {interestt} \nDo not reply back to this email \n\n {news_feed.get()}\nSamachar",
+                            "body": f"Hi {name}! \n Check out today's Samachar(News) on {interestt} \nDo not reply back to this email. \n\n {news_feed.get()}\nRegards\nSamachar",
                           },
-                          "data": {"note": f"\nDo not reply back to this email \n\n {news_feed.get()}\nSamachar",
+                          "data": {"note": f"\nDo not reply back to this email. \n\n {news_feed.get()}\nRegards,\nSamachar",
                           },
                           "routing": {
                                 "method": "single",
