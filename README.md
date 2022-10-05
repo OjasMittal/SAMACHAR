@@ -1,6 +1,7 @@
 # SAMACHAR
-## Inspiration
-In today's fast-running world, people don't get time to hogg from one website to another to check for news related to a particular topic, so **SAMACHAR** (i.e. News in the Hindi language) is here to solve this problem!
+1)To make newspapers tremendous amount of trees are cut daily. In India itself, more than 240 million copies of newspapers are produced daily. So SAMACHAR(i.e. News in the Hindi language) aims to make this planet greener by switching people from physical newspapers to E-Newspaper so that no more trees have to be cut down to make Newspapers!
+
+2)In today's fast-running world, people don't get time to hogg from one website to another to check for news related to a particular topic, so SAMACHAR is here to solve this problem!
 
 ## What it does
 SAMACHAR  helps its user to get a personalized **newspaper mailed** to their email id along with an **SMS** on their phone number notifying them about the delivery of their E-Newspaper.
@@ -28,4 +29,6 @@ For making this website highly secure, implementing Google's OAuth along with st
 -Putting Animations on the website.
 
 ## What's next for SAMACHAR
-Implementing Machine Learning algorithms to provide news in sorted order from most to least trending news.
+-Implementing Machine Learning algorithms to provide news in sorted order from most to least trending news along with sentiment analysis to categorize news as positive news and negative news.
+
+-Monetization can be integrated in the future for advanced versions of the subscription-based model.
