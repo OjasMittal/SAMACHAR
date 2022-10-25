@@ -32,3 +32,5 @@ For making this website highly secure, implementing Google's OAuth along with st
 -Implementing Machine Learning algorithms to provide news in sorted order from most to least trending news along with sentiment analysis to categorize news as positive news and negative news.
 
 -Monetization can be integrated in the future for advanced versions of the subscription-based model.
+## Open for Contributions
+-If you  feel you can add something valuable to this project, feel free to create an issue and I will assign you the role for it.
