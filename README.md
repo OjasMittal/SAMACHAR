@@ -33,4 +33,29 @@ For making this website highly secure, implementing Google's OAuth along with st
 
 -Monetization can be integrated in the future for advanced versions of the subscription-based model.
 ## Open for Contributions
--If you  feel you can add something valuable to this project, feel free to create an issue and I will assign you the role for it.
+
+This is an open source project so feel free to contribute!!
+
+Follow these simple steps:
+
+1. Fork This Repository
+	
+2.  Using Git on your local machine, clone your fork using the URL you just copied: git clone URL_OF_FORK
+	
+3.  Navigate to Repo enter cd NAME_OF_REPOSITORY
+	
+4.  git remote add upstream URL_OF_PROJECT
+	
+5.  git remote -v
+	
+6.  git pull upstream master
+	
+7.  git checkout -b BRANCH_NAME
+	
+8.  Make Changes
+	
+9.  git add .
+	
+10.  git commit -m "commit message"
+       
+11.  git push -u origin BRANCH_NAME
