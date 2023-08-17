@@ -7,8 +7,6 @@ from PIL import Image
 from streamlit_lottie import st_lottie
 import requests
 import os
-from dotenv import load_dotenv
-load_dotenv()
 
 
 firebaseConfig = {
@@ -147,7 +145,7 @@ else:
     if choice == "Login":
         login = st.sidebar.checkbox('Login', key=2)
         if login:
-            try:
+            # try:
                 user = auth.sign_in_with_email_and_password(email, password)
                 flag = 0
                 st.sidebar.success("You have Logged in Successfully!")
@@ -163,6 +161,6 @@ else:
                         st.write("E-Newspaper Mailed Successfully!")
                         st.balloons()
 
-            except:
-                st.info("Enter a valid email/password !")
+            # except:
+            #     st.info("Enter a valid email/password !")
 

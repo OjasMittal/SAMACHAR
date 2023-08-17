@@ -10,6 +10,7 @@ def send_email(name,email,interestt):
                 news_feed=Newsfeed(interest=interestt,
                                    from_date=(datetime.datetime.now()-datetime.timedelta(days=1)).strftime('%Y-%m-%d'),
                                    to_date=datetime.datetime.now().strftime('%Y-%m-%d'))
+                print(news_feed.get())
                 client.send_message(
                         message={
                           "to": {
