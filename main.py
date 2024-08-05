@@ -9,7 +9,6 @@ import requests
 import os
 
 
-
 firebaseConfig = {
     'apiKey': os.getenv("API"),
     'authDomain': "samachar-e33a2.firebaseapp.com",
