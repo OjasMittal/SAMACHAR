@@ -93,7 +93,7 @@ st.sidebar.markdown(
 gauth = authorization.authorize()
 if gauth != 2:
     st.sidebar.write("OR")
-    choice = st.sidebar.radio('Login / SignUp to SAMACHAR', ['Login', 'SignUp'])
+    choice = st.sidebar.selectbox('Login / SignUp to SAMACHAR', ('Login', 'SignUp'))
     st.write('<style>div.row-widget.stRadio > div {flex-direction:row;}</style>', unsafe_allow_html=True)
     email = st.sidebar.text_input("Enter your email address")
     password = st.sidebar.text_input("Enter your password", type="password")
