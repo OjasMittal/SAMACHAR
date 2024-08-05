@@ -132,15 +132,20 @@ else:
         if submit:
             try:
                 user = auth.create_user_with_email_and_password(email, password)
-                st.sidebar.success("Your account is created successfully!")
+                st.sidebar.success("Your account has been created successfully!")
                 st.sidebar.success("Click on Login to continue")
                 st.balloons()
                 user = auth.sign_in_with_email_and_password(email, password)
                 db.child(user['localId']).child("Handle").set(handle)
                 db.child(user['localId']).child("Id").set(user['localId'])
 
-            except:
-                st.info("This account already exists !")
+            except Exception as e:
+                error_message = e.args[1]
+                if "EMAIL_EXISTS" in error_message:
+                    st.info("This account already exists!")
+                else:
+                    st.success(f"Welcome {handle} !")
+                    st.balloons()
 
     if choice == "Login":
         login = st.sidebar.checkbox('Login', key=2)
