@@ -20,6 +20,6 @@ toolz
 tornado
 trycourier
 python-dotenv
-pyrebase5
+pyrebase5==5.0.1
 protobuf
 requests
